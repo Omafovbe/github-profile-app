@@ -7,12 +7,15 @@ import AppRoutes from './routes';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App__header">
+        Hello
         <Navigation />
       </header>
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <AppRoutes />
-      </ErrorBoundary>
+      <div className='App__body'>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <AppRoutes />
+        </ErrorBoundary>
+      </div>
     </div>
   );
 }

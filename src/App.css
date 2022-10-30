@@ -1,9 +1,23 @@
+:root {
+  --main-color: #ecf0f1;
+  --point-color: #adc9d3;
+  --size: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  background-color: #34343b;
+  color: #fff;
+}
+
+.top__clearance {
+  padding-top: 150px;
+}
 .not__found {
   font-size: 60px;
 }
@@ -12,28 +26,46 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App__header {
+  background-color: #484a51;
   display: flex;
-  flex-direction: column;
+  position: fixed;
+  flex-direction: row;
+  width: 95%;
   align-items: center;
-  justify-content: center;
+  top: 20px;
+  left: 50%;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
+  transform: translate(-50%);
 }
+
+.error__msg {
+  box-shadow: 6px 8px 15px 0px rgba(0,0,0,0.75) inset -4px -4px 15px 0px rgba(0,0,0,0.75) inset;
+  width: 380px;
+  background-color: #04172f;
+  font-size: 14px;
+  padding: 15px;
+  text-align: center;
+  margin: 150px auto;
+  border-radius: 10px;
+}
+
+/* .App__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
 
 .loader {
   overflow: hidden;
   display: flex;
   align-items: center;
   align-content: center; 
+  height: 100vh;
   justify-content: center;  
   z-index: 100000;
 }
@@ -59,16 +91,11 @@
   100% { transform: scale(2); }
 }
 
-.error__msg {
-  box-shadow: 6px 8px 15px 0px rgba(0,0,0,0.75) inset -4px -4px 15px 0px rgba(0,0,0,0.75) inset;
-  width: 380px;
-  background-color: #04172f;
-  font-size: 14px;
-  padding: 15px;
-  text-align: center;
-  margin: 150px auto;
-  border-radius: 10px;
-}
+/* Home Background animation
+* by Manuel Pinto
+* https://manuel.pinto.dev
+*
+*/
 
 .home {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -88,3 +115,5 @@
 		background-position: 0% 50%;
 	}
 }
+
+/* End of Home background animation */
