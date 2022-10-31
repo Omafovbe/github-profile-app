@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App__header">
-        Hello
+        <div style={{fontSize: '24px'}} className="username">{`<Omafovbe />`}</div>
         <Navigation />
       </header>
       <div className='App__body'>
