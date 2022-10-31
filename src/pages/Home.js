@@ -11,9 +11,9 @@ const Home = () => {
             .then(data => {
                 setIsLoading(false)
                 setProfileInfo(data)
-                // console.log(profileInfo)
+                console.log(profileInfo)
                 window.localStorage.setItem('repo_url',profileInfo.repos_url)
-            })
+            }).catch(error => console.log(error))
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[isLoading])
 

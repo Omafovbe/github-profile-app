@@ -13,12 +13,19 @@
   padding: 0;
 }
 
-.username {
+.header__name {
+  font-size: 28px;
   font-family: var(--intro-font);
 }
 
+.username {
+  font-size: 26px;
+  font-family: var(--intro-font);
+  color: var(--nav-color);
+}
+
 .profile__bio {
-  font-size: 30px;
+  font-size: calc(10px + 2vmin);
   width: 50%;
   align-self: center
 }
@@ -34,7 +41,7 @@ body {
   align-content: center;
 }
 .not__found {
-  font-size: 60px;
+  font-size: 150px;
 }
 
 /* .App {
@@ -104,13 +111,14 @@ nav ul {
 
 .error__msg {
   box-shadow: 6px 8px 15px 0px rgba(0,0,0,0.75) inset -4px -4px 15px 0px rgba(0,0,0,0.75) inset;
-  width: 380px;
+  width: 300px;
   background-color: #04172f;
   font-size: 14px;
   padding: 15px;
   text-align: center;
   margin: 150px auto;
   border-radius: 10px;
+  line-height: 1.7em;
 }
 
 /* .App__body {
@@ -189,19 +197,64 @@ nav ul {
 
 #mobile {
   display: none;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
 }
 
-@media screen and (min-width: 200px) and (max-width: 680px) {
 
+@media screen  and (max-width: 640px) {
 
   #mobile {
-    display: block;
+    display: flex;
     z-index: 2;
   }
 
   #mobile i{
     font-size: 24px;
     cursor: pointer;
+  }
+
+  .hamburger__btn {
+    content: '';
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all .35s ease-in-out;
+  }
+  
+  .hamburger__btn::before,
+  .hamburger__btn::after {
+    content: '';
+    position: absolute;
+    width: 38px;
+    height: 4px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all .35s ease-in-out;
+  }
+  
+  .hamburger__btn::before {
+    transform: translateY(-12px);
+  }
+  
+  .hamburger__btn::after {
+    transform: translateY(12px);
+  }
+
+  #mobile.menu__open .hamburger__btn {
+    background: transparent;
+  }
+
+  #mobile.menu__open .hamburger__btn::before {
+    transform: rotate(-45deg) translate(-4px, -10px);
+  }
+
+  #mobile.menu__open .hamburger__btn::after {
+    transform: rotate(45deg) translate(-10px, 4px);
   }
 
   .nav__links {
@@ -211,10 +264,11 @@ nav ul {
     justify-content: flex-start;
     position: fixed;
     top: -10px;
-    right: -300px;
+    right: -280px;
     width: 250px;
     height: 100vh;
-    background-color: #484a51;
+    background-color: rgba(255, 255, 255, .25);
+    backdrop-filter: blur(4px);
     padding: 25px 0 0 10px;
     transition: 0.35s ease-in-out;
   }
@@ -225,7 +279,7 @@ nav ul {
   }
 
   .nav__links.toggle__navbar {
-    right: -10px;
+    right: -20px;
     
   }
 
@@ -236,12 +290,13 @@ nav ul {
   }
 
   .home img {
-    height: 250px;
+    height: calc(100px + 30vmin);
+    margin: 30px 5px;
   }
 
   .profile__bio {
-    font-size: 24px;
     width: 90%;
+    text-align: center;
   }
 
 }

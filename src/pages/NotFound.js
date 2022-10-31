@@ -1,7 +1,8 @@
 export default function NotFound() {
     return (
-        <div style={{paddingTop: '150px'}}>
+        <div style={{paddingTop: '150px', textAlign: 'center'}}>
             <p className="not__found">4 0 4</p>
-            😒 😢 We can't find that page.</div>
+            😒 😢 We can't find that page.
+        </div>
     )
 }
