@@ -20,7 +20,7 @@ const RepoDetails = () => {
             <div className="git__desc">
                 <p>{repoInfo.description}</p>
                 <p><i className="fa-brands fa-github"></i> { repoInfo.git_url }</p>
-                <p>{dispLang}<i className="fa-solid fa-code-fork"></i> {repoInfo.forks}</p>
+                <p>{dispLang} &nbsp; &nbsp; &nbsp;<i className="fa-solid fa-code-fork"></i> {repoInfo.forks}</p>
                 <p>Last updated: {renDate} ({formatDistance(new Date(repoInfo.updated_at), new Date(), { addSuffix: true })})</p>
             </div>
              

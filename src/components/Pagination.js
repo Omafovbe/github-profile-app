@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 const Pagination = ({ reposList }) => {
@@ -29,8 +29,7 @@ const Pagination = ({ reposList }) => {
     
     const jumpPages = (ev) => {
         setPage(Number(ev.target.id))
-        console.log(page)
-        
+               
     }
 
     pageNumbers = pageArr.slice(minPageRange, maxPageRange).map((each) => {
@@ -40,6 +39,10 @@ const Pagination = ({ reposList }) => {
             </button>
        
     })
+
+    useEffect(() => {
+        
+    },[page])
 
     
     

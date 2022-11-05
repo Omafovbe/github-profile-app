@@ -62,7 +62,7 @@ body {
   font-size: calc(8px + 2vmin);
   color: white;
   transform: translate(-50%);
-  transition: all ease-out .5s;
+  transition: all ease-out .4s;
 }
 
 .header__scrolled {
