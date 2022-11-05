@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { NavLink } from "react-router-dom"
 
 const Navigation = () => {
@@ -6,6 +6,17 @@ const Navigation = () => {
 
     const toggleMenu = () => setIsOpen(!isOpen)
 
+    useEffect(() => {
+        document.addEventListener("scroll", () => {
+            let header = document.querySelector('.App__header');
+            if (window.scrollY > 120) {
+                header?.classList.add('header__scrolled');
+            } else {
+                header?.classList.remove('header__scrolled');
+            }
+        })
+    }, [])
+    
     const menuLinks = [
         {
             name: 'Home',
@@ -25,11 +36,12 @@ const Navigation = () => {
             url: '/404',
         },
     ]
+        
     return (
         <nav>
             <ul className={`nav__links ${isOpen ? "toggle__navbar" : ""}`}>
                 {menuLinks.map(menu => {
-                    return(<li key={menu.name}><NavLink to={menu.url} className={({ isActive }) => isActive ? 'nav__active' : 'nav__inactive'} {...menu}>{menu.name}</NavLink></li>)
+                    return(<li key={menu.name}><NavLink to={menu.url} className={({ isActive }) => isActive ? 'nav__active' : 'nav__inactive'} {...menu} onClick={toggleMenu}>{menu.name}</NavLink></li>)
                 })}
                 
             </ul>

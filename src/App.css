@@ -50,7 +50,6 @@ body {
 
 
 .App__header {
-  /* background-color: #484a51; */
   display: flex;
   flex-direction: row;
   position: fixed;
@@ -63,6 +62,11 @@ body {
   font-size: calc(8px + 2vmin);
   color: white;
   transform: translate(-50%);
+  transition: all ease-out .5s;
+}
+
+.header__scrolled {
+  background-color: #484a51;
 }
 
 nav {
@@ -195,6 +199,57 @@ nav ul {
 }
 /* End of Home background animation */
 
+.repos {
+  margin: 100px auto;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.repo__list {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  height: 350px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #525a69;;
+}
+
+.repo__display {
+  justify-self: flex-start;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.repo__list::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* .statesNav::-webkit-scrollbar-track {
+  background: #04172f;
+} */
+
+.repo__list::-webkit-scrollbar-thumb {
+  background-color: #525a69;
+  border-radius: 5px;
+}
+
+.repository {
+  
+  border-bottom: 1px solid #adc9d3;
+  margin: 10px 0;
+  padding: 10px ;
+}
+
+.repository a, a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
 #mobile {
   display: none;
   cursor: pointer;
@@ -297,6 +352,14 @@ nav ul {
   .profile__bio {
     width: 90%;
     text-align: center;
+  }
+
+  .repos {
+    flex-direction: column;
+  }
+
+  .repo__list {
+    width: 100%;
   }
 
 }
