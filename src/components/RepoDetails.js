@@ -11,11 +11,11 @@ const RepoDetails = () => {
       [repoId]
     )
   )
-  console.log(repoInfo)
+
   const lastUpdatedAt = format(new Date(repoInfo.updated_at), "d MMM yyyy")
   const dispLang = repoInfo.language ? (
     <>
-      <i className="fa-solid fa-code"></i> {repoInfo.language} &nbsp;
+      <i className="fa-solid fa-code"></i> {repoInfo.language} &nbsp; &nbsp; &nbsp;
     </>
   ) : (
     ""
@@ -33,7 +33,7 @@ const RepoDetails = () => {
           <i className="fa-brands fa-github"></i> {repoInfo.git_url}
         </p>
         <p>
-          {dispLang} &nbsp; &nbsp; &nbsp;
+          {dispLang}
           <i className="fa-solid fa-code-fork"></i> {repoInfo.forks}
         </p>
         <p>

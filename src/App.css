@@ -41,7 +41,7 @@ body {
   align-content: center;
 }
 .not__found {
-  font-size: 150px;
+  font-size:  calc(80px + 2vmin);
 }
 
 /* .App {
@@ -62,11 +62,13 @@ body {
   font-size: calc(8px + 2vmin);
   color: white;
   transform: translate(-50%);
-  transition: all ease-out .4s;
+  transition: all ease-out .3s;
 }
 
 .header__scrolled {
   background-color: #484a51;
+  top: 0;
+  width: 95%;
 }
 
 nav {
@@ -200,8 +202,8 @@ nav ul {
 /* End of Home background animation */
 
 .repos {
-  margin: 100px auto;
-  height: 100%;
+  margin: 20px auto;
+  padding-top: 80px;
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -213,7 +215,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   justify-self: flex-end;
-  height: 350px;
+  height: 300px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #525a69;
@@ -229,20 +231,26 @@ nav ul {
   width: 6px;
 }
 
-/* .statesNav::-webkit-scrollbar-track {
-  background: #04172f;
-} */
 
 .repo__list::-webkit-scrollbar-thumb {
   background-color: #525a69;
   border-radius: 5px;
 }
 
+.repo__header {
+  padding: 15px 10px;
+  font-weight: 600;
+  border-bottom: 2px solid #adc9d3;
+}
+
 .repository {
-  
-  border-bottom: 1px solid #adc9d3;
+  border-bottom: 2px solid #adc9d3;
   margin: 10px 0;
   padding: 10px ;
+}
+
+.repository:hover {
+  font-weight: 500;
 }
 
 .repository a, a:active {
@@ -278,13 +286,9 @@ nav ul {
   
 }
 
-.repo__header {
-  margin: 15px 10px;
-  font-weight: 600;
-}
-
 .num__btns {
-  margin: 10px auto;
+  padding: 10px 5px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 
@@ -311,7 +315,7 @@ nav ul {
 }
 
 
-@media screen  and (max-width: 640px) {
+@media screen  and (max-width: 680px) {
 
   #mobile {
     display: flex;

@@ -5,6 +5,7 @@ const userProfile = "https://api.github.com/users/Omafovbe"
 // creating the state
 const useStore = create((set) => ({
   githubUrl: userProfile,
+  githubProfile: null,
   repoUrl: null,
   gitHubRepos: [],
   isLoading: false,
@@ -18,6 +19,7 @@ const useStore = create((set) => ({
     })
   },
   setUrl: (url) => set({ repoUrl: url }),
+  setProfile: (data) => set({githubProfile: data})
 }))
 
 export default useStore

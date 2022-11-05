@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 import useStore from "../store"
 import Pagination from "../components/Pagination"
+import Loading from "../components/Loading"
 
 const Repos = () => {
     const navigate = useNavigate()
@@ -13,7 +14,7 @@ const Repos = () => {
 
     useEffect(() => {
         if (!repoUrl) navigate('/')
-        else {
+        if (!repos || repos.length === 0) {
 
             fetchRepos(repoUrl+'?per_page=100')
                 // .then(resp => resp.json())
@@ -23,19 +24,25 @@ const Repos = () => {
                 // }).catch(err => console.log("fetch Error"))
             
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     
     return (
-        <div className="repos top__clearance">
-            <div className="repo__display">
-                <pre>{isLoading}</pre>
-                <Outlet />
-            </div>
-            <div>
-                <Pagination reposList={repos} />
-            </div>
+        <>
+            {isLoading ?
+                <Loading /> :
+                (<div className="repos top__clearance">
+                    <div className="repo__display">
+                        <Outlet />
+                    </div>
+                    <div>
+                        <Pagination reposList={repos} />
+                    </div>
             
-        </div>
+                </div>)
+            }
+        </>
+        
     )
 }
 

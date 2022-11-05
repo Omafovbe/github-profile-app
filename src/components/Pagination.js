@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 const Pagination = ({ reposList }) => {
@@ -21,7 +21,6 @@ const Pagination = ({ reposList }) => {
             setMinPageRange((prev) => prev + pageLimit)
           }
         setPage(prev => prev + 1)
-        console.log(page)
      }
     const prevClick = () => {
         if ((page - 1) % pageLimit === 0) {
@@ -38,20 +37,24 @@ const Pagination = ({ reposList }) => {
 
     pageNumbers = pageArr.slice(minPageRange, maxPageRange).map((each) => {
         
-            return <button className="pageNumBtn" id={each} key={each} onClick={jumpPages}>
+        return <button className="pageNumBtn" id={each} key={each} onClick={jumpPages}>
                 {each}
             </button>
-       
     })
 
-    // slicing the total repo list into bits eg slice(minLimit, maxLimit)
+    /*     
+        slicing the total repo list into bits eg slice(minLimit, maxLimit)
+        if page-number = 2 then
+        minLimit = (2*5-5) = 5
+        maxLimit = (2*5) = 10
+        repo-list.slice(5,10) 
+    */
     minLimit = (page * numPerList - numPerList)
     maxLimit = (page * numPerList)
-    console.log(minLimit, maxLimit)
 
     useEffect(() => {
         setReducedList(reposList.slice(minLimit, maxLimit))
-    },[page, minLimit, maxLimit, reposList])
+    },[minLimit, maxLimit, reposList])
 
     
     
