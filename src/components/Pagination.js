@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 
 const Pagination = ({ reposList }) => {
-    const totalPages = Math.ceil(reposList.length / 5)
+    const numPerList = 5
+    const totalPages = Math.ceil(reposList.length / numPerList)
     const [page, setPage] = useState(1)
     const [minPageRange, setMinPageRange] = useState(0)
     const [maxPageRange, setMaxPageRange] = useState(3)
     const pageLimit = 3
     let pageNumbers = null
+    let minLimit = 0
+    let maxLimit = 0
+    const [reducedList, setReducedList] = useState(reposList)
 
     const pageArr = [...Array(totalPages)].map((_, index) => index + 1)
 
@@ -40,13 +44,18 @@ const Pagination = ({ reposList }) => {
        
     })
 
+    // slicing the total repo list into bits eg slice(minLimit, maxLimit)
+    minLimit = (page * numPerList - numPerList)
+    maxLimit = (page * numPerList)
+    console.log(minLimit, maxLimit)
+
     useEffect(() => {
-        
-    },[page])
+        setReducedList(reposList.slice(minLimit, maxLimit))
+    },[page, minLimit, maxLimit, reposList])
 
     
     
-    const putRepoName = reposList.map((repo) => (
+    const putRepoName = reducedList.map((repo) => (
         
         <div key={repo.id} className="repository">
             <Link to={`${repo.id}`}>{repo.name}</Link>
