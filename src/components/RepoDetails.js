@@ -11,7 +11,7 @@ const RepoDetails = () => {
         )
     )
     console.log(repoInfo)
-    const renDate = format(new Date(repoInfo.updated_at), 'd-MMM-yyyy')
+    const renDate = format(new Date(repoInfo.updated_at), 'd MMM yyyy')
     const dispLang = repoInfo.language ? <><i className="fa-solid fa-code"></i> {repoInfo.language} </>
  : ''
     return (
@@ -20,9 +20,10 @@ const RepoDetails = () => {
             <div className="git__desc">
                 <p>{repoInfo.description}</p>
                 <p><i className="fa-brands fa-github"></i> { repoInfo.git_url }</p>
-                <p>{dispLang}<i className="fa-solid fa-code-fork"></i> { repoInfo.forks }</p>
+                <p>{dispLang}<i className="fa-solid fa-code-fork"></i> {repoInfo.forks}</p>
+                <p>Last updated: {renDate} ({formatDistance(new Date(repoInfo.updated_at), new Date(), { addSuffix: true })})</p>
             </div>
-             <p>Updated At: {renDate} {formatDistance(new Date(repoInfo.updated_at), new Date(), { addSuffix: true })} </p>
+             
         </div>
     )
 }

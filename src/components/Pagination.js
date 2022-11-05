@@ -53,15 +53,18 @@ const Pagination = ({ reposList }) => {
     
     return (
         <>
-            Repositiories ({reposList.length})
+            <div className="repo__header">
+                <p>Repositiories ({reposList.length})</p>
+                
+            </div>
             <div className="repo__list">
                 {putRepoName}
             
             </div>
-            <div>
-            <button className="pageBtn" onClick={prevClick}  aria-disabled={page <= 1} disabled={page <= 1}>Prev</button>
+            <div className="num__btns">
+            <button className="pageNumBtn" onClick={prevClick}  aria-disabled={page <= 1} disabled={page <= 1}>Prev</button>
                 {pageNumbers}
-                <button className="pageBtn" onClick={nextClick} aria-disabled={page >= totalPages} disabled={page >= totalPages}>Next</button>
+                <button className="pageNumBtn" onClick={nextClick} aria-disabled={page >= totalPages} disabled={page >= totalPages}>Next</button>
             </div>
         </>
     )

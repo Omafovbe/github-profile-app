@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react"
 import { Routes, Route } from "react-router-dom"
 import Loading from "../components/Loading"
+import RepoIndex from "../components/RepoIndex"
 const Home = lazy(() => import("../pages/Home"))
 const NotFound = lazy(() => import("../pages/NotFound"))
 const Greet = lazy(() => import("../pages/Greet"))
@@ -13,7 +14,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="repos" element={<Repos />}>
-          <Route index element={<div>waiting...</div>} />
+          <Route index element={<RepoIndex />} />
           <Route path=":repoId" element={<RepoDetails />} />
         </Route>
         <Route path="greet" element={<Greet />} />

@@ -216,7 +216,7 @@ nav ul {
   height: 350px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #525a69;;
+  scrollbar-color: #525a69;
 }
 
 .repo__display {
@@ -257,6 +257,46 @@ nav ul {
   height: 42px;
   justify-content: center;
   align-items: center;
+}
+
+.git__name {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.git__desc {
+  background:  #525a69;
+  border-radius: 5px;
+  padding: 20px 30px;
+  line-height: 1.5em;
+  font-size: 15px;
+}
+
+.git__desc p {
+  margin: 15px 0;
+  
+}
+
+.repo__header {
+  margin: 15px 10px;
+  font-weight: 600;
+}
+
+.num__btns {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+
+}
+.pageNumBtn {
+  border: 1px solid #525a69;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #fff;
 }
 
 
