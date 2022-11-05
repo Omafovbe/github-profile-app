@@ -294,9 +294,20 @@ nav ul {
   border-radius: 3px;
   padding: 5px 10px;
   margin-left: 10px;
-  background-color: transparent;
+  background-color: #525a69;
   cursor: pointer;
   color: #fff;
+}
+
+.pageNumBtn:hover {
+  background-color: #43506a
+}
+
+.pageNumBtn:disabled {
+  background-color: transparent;
+  cursor: not-allowed;
+  border:1px solid #ebf1f8;
+  color: lightslategray;
 }
 
 
