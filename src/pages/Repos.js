@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import useStore from '../store';
 import Pagination from '../components/Pagination';
 import Loading from '../components/Loading';
+import SEOtag from '../components/SEOtag';
 
 const Repos = () => {
   const navigate = useNavigate();
@@ -27,6 +28,11 @@ const Repos = () => {
 
   return (
     <>
+      <SEOtag
+        title="Github Repository"
+        description="Repository of user worked upon over time"
+        canonical="/repos"
+      />
       {isLoading ? (
         <Loading />
       ) : (

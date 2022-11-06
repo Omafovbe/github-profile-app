@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Loading from "../components/Loading"
+import SEOtag from "../components/SEOtag"
 import useStore from "../store"
 
 const Home = () => {
@@ -30,6 +31,11 @@ const Home = () => {
 
   return (
     <>
+      <SEOtag
+        title="Github Portfolio App"
+        description="Github Profile information of Omafovbe"
+        canonical="/"
+      />
       {isLoading ? (
         <Loading />
       ) : (

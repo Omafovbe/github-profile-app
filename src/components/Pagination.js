@@ -54,7 +54,7 @@ const Pagination = ({ reposList }) => {
 
     useEffect(() => {
         setReducedList(reposList.slice(minLimit, maxLimit))
-    },[minLimit, maxLimit, reposList])
+    },[page,minLimit, maxLimit, reposList])
 
     
     
