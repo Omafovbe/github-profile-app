@@ -1,6 +1,31 @@
-# Getting Started with Create React App
+# AltSchool Exam Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend Engineering second semester exam project.
+
+Implement an API fetch of your GitHub portfolio, show a page with a list of all your repositories on GitHub(the page should implement pagination for the repo list), and create another page showing data for a single repo clicked from the list of repos using nested routes while using all the necessary tools in react. Implement the proper SEO, Error Boundary (show a page to test the error boundary) and 404 pages. Good UI and Designs are important. 
+
+
+### Project url
+[https://gh-profile-app.vercel.app/](https://gh-profile-app.vercel.app/)
+
+## Screenshot of project
+Desktop View
+![Desktop View](screenshot/desktop-view.jpeg)
+
+Mobile View
+![menu-closed](screenshot/mobile-menu-closed.jpeg)
+
+![menu-opened](screenshot/mobile-menu-expanded.jpeg)
+
+Repository Page
+![Repo](screenshot/repository-single.png)
+
+Error Boundary
+![Error Boundary](screenshot/errorBoundary.jpeg)
+
+Not-Found (404) Page
+![404-page](screenshot/404-page.jpeg)
+
 
 ## Available Scripts
 

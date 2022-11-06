@@ -1,49 +1,46 @@
-import { useEffect } from "react"
-import { Outlet, useNavigate } from "react-router-dom"
-import useStore from "../store"
-import Pagination from "../components/Pagination"
-import Loading from "../components/Loading"
+import { useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import useStore from '../store';
+import Pagination from '../components/Pagination';
+import Loading from '../components/Loading';
 
 const Repos = () => {
-    const navigate = useNavigate()
-    const repos = useStore(state => state.gitHubRepos)
-    const fetchRepos = useStore(state => state.fetch)
-    const isLoading = useStore(state => state.isLoading)
-    
-    const repoUrl = useStore(state => state.repoUrl) ?? null
+  const navigate = useNavigate();
+  const repos = useStore((state) => state.gitHubRepos);
+  const fetchRepos = useStore((state) => state.fetch);
+  const isLoading = useStore((state) => state.isLoading);
 
-    useEffect(() => {
-        if (!repoUrl) navigate('/')
-        if (!repos || repos.length === 0) {
+  const repoUrl = useStore((state) => state.repoUrl) ?? null;
 
-            fetchRepos(repoUrl+'?per_page=100')
-                // .then(resp => resp.json())
-                // .then(data => {
-                //     setReposList(data)
-                //     console.log(data, )
-                // }).catch(err => console.log("fetch Error"))
-            
-        }
+  useEffect(() => {
+    if (!repoUrl) navigate('/');
+    if (!repos || repos.length === 0) {
+      fetchRepos(repoUrl + '?per_page=100');
+      // .then(resp => resp.json())
+      // .then(data => {
+      //     setReposList(data)
+      //     console.log(data, )
+      // }).catch(err => console.log("fetch Error"))
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
-    
-    return (
-        <>
-            {isLoading ?
-                <Loading /> :
-                (<div className="repos top__clearance">
-                    <div className="repo__display">
-                        <Outlet />
-                    </div>
-                    <div>
-                        <Pagination reposList={repos} />
-                    </div>
-            
-                </div>)
-            }
-        </>
-        
-    )
-}
+  }, []);
 
-export default Repos
+  return (
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="repos top__clearance">
+          <div className="repo__display">
+            <Outlet />
+          </div>
+          <div>
+            <Pagination reposList={repos} />
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Repos;
